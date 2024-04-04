@@ -1,24 +1,23 @@
 package org.galangcode.todolistapp.model;
 
 public class Data {
-    private int id;
-    private String title, description;
+    private String id, title, description;
 
     public Data() {
 
     }
 
-    public Data(int id, String title, String description) {
+    public Data(String  id, String title, String description) {
         this.id = id;
         this.title = title;
         this.description = description;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
