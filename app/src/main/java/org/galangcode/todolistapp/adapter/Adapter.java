@@ -55,6 +55,7 @@ public class Adapter extends BaseAdapter {
             Data data = lists.get(position);
             title.setText(data.getTitle());
             desc.setText(data.getDescription());
+
         }
 
         return convertView;

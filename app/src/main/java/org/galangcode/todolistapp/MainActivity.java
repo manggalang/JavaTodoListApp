@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                                 Intent intent = new Intent(MainActivity.this, EditorActivity.class);
                                 intent.putExtra("id", id);
                                 intent.putExtra("title", title);
-                                intent.putExtra("desc", description);
+                                intent.putExtra("description", description);
                                 startActivity(intent);
                                 break;
                             case 1:

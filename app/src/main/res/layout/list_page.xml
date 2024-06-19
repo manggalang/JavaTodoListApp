@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="24dp">
+
     <TextView
         android:id="@+id/list_title"
         android:layout_width="wrap_content"
@@ -12,13 +13,40 @@
         android:textColor="#000"
         android:textStyle="bold"
         android:textSize="16dp"/>
+
     <TextView
         android:id="@+id/list_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Descritpion"
-        android:textColor="#000"
-        android:textSize="14dp"/>
+        android:text="Descritption"
+        android:textColor="@color/text_gray"
+        android:textSize="12dp"
+        android:maxLines="3"
+        android:layout_marginTop="12dp"
+        android:ellipsize="end"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Edited:"
+            android:textColor="@color/text_gray"
+            android:textSize="10dp"
+            android:layout_marginTop="6dp"
+            android:ellipsize="end"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Arpil 2024 11:00 pm"
+            android:textColor="@color/text_gray"
+            android:textSize="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginLeft="6dp"
+            android:ellipsize="end"/>
+    </LinearLayout>
 
 
 </LinearLayout>

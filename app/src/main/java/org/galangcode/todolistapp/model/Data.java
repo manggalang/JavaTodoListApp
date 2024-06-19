@@ -1,7 +1,7 @@
 package org.galangcode.todolistapp.model;
 
 public class Data {
-    private String id, title, description;
+    private String id, title, description, date;
 
     public Data() {
 
@@ -35,5 +35,13 @@ public class Data {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

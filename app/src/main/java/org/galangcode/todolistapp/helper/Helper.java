@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Helper extends SQLiteOpenHelper {
-    private static  final int DATABASE_VERSION = 1;
+    private static  final int DATABASE_VERSION = 2;
     static final String DATABASE_NAME = "TodoListApp";
 
     public Helper(Context context) {
@@ -19,7 +19,7 @@ public class Helper extends SQLiteOpenHelper {
     // This will run only once
     @Override
     public void onCreate(SQLiteDatabase db) {
-        final String SQL_CREATE_TABLE = "CREATE TABLE list (id INTEGER PRIMARY KEY autoincrement, title TEXT NOT NULL, description TEXT NOT NULL)";
+        final String SQL_CREATE_TABLE = "CREATE TABLE list (id INTEGER PRIMARY KEY autoincrement, title TEXT NOT NULL, description VARCHAR NOT NULL, date TEXT NOT NULL)";
         db.execSQL(SQL_CREATE_TABLE);
     }
 
@@ -41,6 +41,7 @@ public class Helper extends SQLiteOpenHelper {
                 map.put("id", cursor.getString(0));
                 map.put("title", cursor.getString(1));
                 map.put("description", cursor.getString(2));
+                map.put("date", cursor.getString(3));
                 data.add(map);
             } while (cursor.moveToNext());
         }
@@ -48,15 +49,15 @@ public class Helper extends SQLiteOpenHelper {
         return data;
     }
 
-    public void addList(String title, String description) {
+    public void addList(String title, String description, String date) {
         SQLiteDatabase database = this.getWritableDatabase();
-        String QUERY = "INSERT INTO list (title, description) VALUES('"+title+"', '"+description+"')";
+        String QUERY = "INSERT INTO list (title, description) VALUES('"+title+"', '"+description+"', '"+date+"')";
         database.execSQL(QUERY);
     }
 
-    public void updateList(int id,String title, String description) {
+    public void updateList(int id,String title, String description, String date) {
         SQLiteDatabase database = this.getWritableDatabase();
-        String QUERY = "UPDATE list set title ='"+title+"', description ='"+description+"' WHERE id ="+id;
+        String QUERY = "UPDATE list set title ='"+title+"', description ='"+description+"', date = '"+date+"', WHERE id ="+id;
         database.execSQL(QUERY);
     }
 
